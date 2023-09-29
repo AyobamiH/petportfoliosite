@@ -13,10 +13,10 @@ This project aims to create engaging and effective websites for pet sitters and 
 ## Installation Instructions
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/pet-friendly-websites.git
+   git clone https://github.com/AyobamiH/petportfoliosite.git
 
 2. **Navigate to the project directory**:
-    cd pet-friendly-websites
+    cd petportfoliosite
 
 3. **Install dependencies:**
     npm install
