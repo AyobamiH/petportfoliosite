@@ -88,7 +88,7 @@ const CallToAction = () => {
         <Lottie
           animationData={websiteRevamp}
           loop={true}
-          className="w-3/4 md:w-full sm:shadow-lg sm:w-full p-2 mx-auto h-auto rounded-lg"
+          className="w-full mx-auto h-auto rounded-lg"
         />
       </div>
     </div>
