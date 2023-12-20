@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-button {
+  background-image: radial-gradient(circle, #353763, #b8aa84, #716170, #5b6669);
+  border: none;
+  cursor: pointer;
+}
+
+.gradient-button:hover {
+  background-image: radial-gradient(circle, #5b6669, #716170, #b8aa84, #353763);
+}
+
+
+.gradient-button {
+  background: radial-gradient(circle, #353763, #b8aa84, #716170, #5b6669);
+  border: none;
+  cursor: pointer;
+  animation: gradientAnimation 5s infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-button:hover {
+  background: radial-gradient(circle, #5b6669, #716170, #b8aa84, #353763);
+}
+
+
+/* bubbles */
+
+/* Add this CSS to your global stylesheet or in a <style> tag within your HeroSection component */
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: rise 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.bubble::before,
+.bubble::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bubble::before {
+  width: 100%;
+  height: 100%;
+}
+
+.bubble::after {
+  width: 75%;
+  height: 75%;
+  top: 12.5%;
+  left: 12.5%;
+}
+
+
+/* Add this CSS to your global stylesheet or in a <style> tag within your HeroSection component */
+
+/* Keyframes for bubbles */
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Keyframes for particle movement */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+/* Keyframes for background gradient transition */
+@keyframes backgroundTransition {
+  0% {
+    background: #001f3f;
+  }
+  50% {
+    background: #2c3e50;
+  }
+  100% {
+    background: #001f3f;
+  }
+}
+
+/* Bubble styles */
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: rise 6s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Particle styles */
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: float 10s infinite linear;
+  pointer-events: none;
+}
+
+/* Background transition */
+.hero-background {
+  animation: backgroundTransition 15s infinite;
+}
