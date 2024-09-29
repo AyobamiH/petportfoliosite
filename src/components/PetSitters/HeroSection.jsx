@@ -103,7 +103,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-center text-gray-800 max-w-4xl mx-auto px-4">
         {/* Responsive Headline */}
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight sm:leading-tight md:leading-snug lg:leading-snug">
-          "I Design Pet-Friendly Websites for Sitters and Care Providers"
+          I Design Pet-Friendly Websites for Sitters and Care Providers
         </h1>
 
         {/* Responsive Subtext */}
