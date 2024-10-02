@@ -93,26 +93,7 @@ const Footer = () => {
               </motion.a>
             </div>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-            <p className="mb-4">
-              Stay updated with our latest pet web design tips!
-            </p>
-            <form className="flex">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-grow px-4 py-2 rounded-l-md text-gray-900"
-                aria-label="Email for newsletter"
-              />
-              <button
-                type="submit"
-                className="bg-blue-500 text-white px-4 py-2 rounded-r-md hover:bg-blue-600 transition duration-300"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+          
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p>&copy; 2023 Pet Web Design Agency. All rights reserved.</p>
