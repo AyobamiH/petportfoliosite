@@ -1,11 +1,14 @@
 
 import React from "react";
-import AnimatedButton from "./AnimatedButton"; // Import the reusable button
 import Lottie from "lottie-react";
 import webDesign from "./animations/webDesign.json";
 import websiteRevamp from "./animations/websiteRevamp.json";
 import websiteOptimization from "./animations/websiteOptimization.json";
 import seoAnimation from "./animations/seoVisibility.json";
+import AnimatedButton from "./AnimatedButton";
+import { FaCheck } from "react-icons/fa"; // Import check icon
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion"; // Import framer-motion for animations
 
 const servicePackages = [
   {
@@ -19,8 +22,8 @@ const servicePackages = [
       "User-friendly navigation",
       "Integration with booking systems",
       "SEO-friendly structure",
-      "High-quality images and graphics"
-    ]
+      "High-quality images and graphics",
+    ],
   },
   {
     id: 2,
@@ -33,8 +36,8 @@ const servicePackages = [
       "Enhanced user experience",
       "Mobile optimization",
       "Content restructuring",
-      "SEO improvements"
-    ]
+      "SEO improvements",
+    ],
   },
   {
     id: 3,
@@ -47,8 +50,8 @@ const servicePackages = [
       "SEO optimization",
       "Accessibility improvements",
       "Security updates",
-      "Regular maintenance and updates"
-    ]
+      "Regular maintenance and updates",
+    ],
   },
   {
     id: 4,
@@ -61,63 +64,73 @@ const servicePackages = [
       "Google My Business setup",
       "Content creation and optimization",
       "Backlink building",
-      "Analytics and reporting"
-    ]
-  }
+      "Analytics and reporting",
+    ],
+  },
 ];
 
 const ServicePackages = () => {
   return (
-    <>
-
-
-    <section className="py-16 bg-white text-center md:text-left">
+    <section className="py-8 bg-white text-center md:text-left">
       <div className="max-w-7xl min-h-[calc(100vh-64px)] mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12">My Service Packages</h2>
-        
+       
+
+        <div className="max-w-7xl mx-auto text-center px-4">
+           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-12">My Services </h2>
+            <p className=" text-gray-600 mb-6">
+              I understand the unique challenges of running a pet care business on your own. That's why I've created specialized service packages to help your pet care professionals shine online.
+            </p>
+        </div>
         {/* Service Cards Container */}
-        <div className="flex flex-wrap -mx-4">
+        <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-8">
           {servicePackages.map((service, index) => (
-            <div key={index} className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-4 py-8">
-              <div className="flex flex-col h-full bg-white rounded-lg p-6 shadow-lg">
-                {/* Lottie Animation */}
-                <div className="w-full mb-4">
-                  <Lottie
-                    animationData={service.image}
-                    loop={true}
-                    className="h-auto mb-4 object-cover w-full rounded-tl-lg aspect-video"
-                  />
-                </div>
-                
-                {/* Service Details */}
-                <div className="bg-white rounded-lg p-6">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
-                  
-                  <ul className="mb-4">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="text-gray-600 text-sm sm:text-base">
-                        • {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Placeholder price */}
-                  <p className="text-lg font-bold text-gray-800 mb-4">Price: TBD</p>
-
-                  {/* Learn More Button */}
-                  <AnimatedButton>
-                    Learn More
-                  </AnimatedButton>
-                </div>
+            <motion.div 
+              key={index}
+              whileHover={{ scale: 1.05 }} // Animation to scale up card on hover
+              initial={{ opacity: 0, y: 50 }} // Initial animation state
+              animate={{ opacity: 1, y: 0 }} // Animate into view
+              transition={{ duration: 0.5, delay: index * 0.1 }} // Transition settings 
+              className="flex flex-col h-full bg-white rounded-lg "
+              >
+              {/* Lottie Animation */}
+              <div className="w-full mb-4 relative">
+                <Lottie
+                  animationData={service.image}
+                  loop={true}
+                  className="h-32 w-auto mx-auto object-cover"
+                />
               </div>
-            </div>
+              
+              {/* Service Details with Full Shadow */}
+              <div className="flex flex-col bg-white rounded-lg p-6 shadow-lg  flex-grow">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                
+                <ul className="mb-4 space-y-2">
+                  {service.features.map((feature, index) => (
+                    <li key={index} className="text-gray-600 text-sm sm:text-base flex items-center">
+                      <FaCheck className="text-green-500 mr-2" /> {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Contact Me Button with Link to Contact Page */}
+                {/* <Link to="/contact" className="mx-auto">
+                  <button className="px-6 py-3 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition duration-300">
+                    Contact Me
+                  </button>
+                </Link> */}
+                <Link to="/contact" className="mx-auto">
+                  <AnimatedButton className="bg-orange-500">Contact Me</AnimatedButton>
+                </Link>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
-    </>
   );
 };
 
 export default ServicePackages;
+
