@@ -75,13 +75,13 @@ const TestimonialsSection = () => {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
-          className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+          className="text-center text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-12"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          My Clients are Barking with Joy!
+          Client Reviews...
         </motion.h2>
         <Swiper
           modules={[Pagination, Autoplay]} // Initialize the modules here
