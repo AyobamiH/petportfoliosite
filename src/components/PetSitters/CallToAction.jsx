@@ -54,9 +54,9 @@ import { Link } from "react-router-dom";
 
 const CallToAction = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-row bg-neutral-50 max-w-7xl items-center justify-around mx-auto p-4 md:p-8">
+    <div className="flex flex-col-reverse md:flex-row bg-white max-w-7xl items-center justify-around mx-auto p-4 md:p-8">
       {/* Left Section - Text */}
-      <div className="w-full md:w-1/2 mb-8 md:mb-0">
+      <div className="w-full md:w-1/2 mb-8 mt-4 border-left  p-6  md:mb-0">
         <h2
           className="font-bold text-gray-900 mb-4 text-center md:text-left"
           style={{
@@ -84,7 +84,7 @@ const CallToAction = () => {
       </div>
 
       {/* Right Section - Animation */}
-      <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+      <div className="w-full md:w-1/2 flex justify-center border-right p-6 md:justify-end">
         <Lottie
           animationData={websiteRevamp}
           loop={true}
